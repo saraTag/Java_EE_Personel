@@ -9,8 +9,16 @@ cache:
     - $HOME/.m2
 services:
   - mysql
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
 before_install:
-  - mysql -u root --password="" < Schema.sql  
+  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('new_password') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
+  - sudo mysql_upgrade -u root -pnew_password
+  - sudo service mysql restart 
 #deploy:
 #  provider: bluemixcloudfoundry
 #  skip_cleanup: true
