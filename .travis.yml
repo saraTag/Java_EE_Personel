@@ -8,7 +8,9 @@ cache:
   directories:
     - $HOME/.m2
 services:
-  - mysql    
+  - mysql
+before_install:
+  - mysql -u root --password="" < Schema.sql  
 #deploy:
 #  provider: bluemixcloudfoundry
 #  skip_cleanup: true
