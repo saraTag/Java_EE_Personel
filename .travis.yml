@@ -16,7 +16,7 @@ addons:
     packages:
       - mysql-server
 before_install:
-  - mysqladmin -u root --password="root" create Master
+  - mysqladmin -u root --password="" create Master
 #deploy:
 #  provider: bluemixcloudfoundry
 #  skip_cleanup: true
