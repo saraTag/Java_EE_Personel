@@ -7,6 +7,8 @@ dist: trusty
 cache:
   directories:
     - $HOME/.m2
+services:
+  - mysql    
 #deploy:
 #  provider: bluemixcloudfoundry
 #  skip_cleanup: true
