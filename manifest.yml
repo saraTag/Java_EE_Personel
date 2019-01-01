@@ -1,0 +1,5 @@
+applications:
+ - name: Dauphine-Pole-Info
+   path: target/Dauphine-Pole-Info.war
+   instances: 1
+
